@@ -3,18 +3,27 @@ project(arduino_robot)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  std_msgs
   message_generation
+  std_msgs
+  #std_srvs
 )
 
 add_message_files(
   FILES
-  # joystick.msg
+  Joystick.msg
+  MotorSpeed.msg
+  ArmMotors.msg
+)
+
+add_service_files(
+  #FILES
+  #ArmMotors.srv
 )
 
 generate_messages(
   DEPENDENCIES
   std_msgs
+  #std_srvs
 )
 
 catkin_package(
